@@ -1,0 +1,112 @@
+.modal-gallery {
+    display: none; 
+    position: fixed; 
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-inner {
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: zoom;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+}
+
+.modal-img {
+    display: block;
+    max-width: 100%;
+    max-height:100%;
+    position:relative;
+    
+}
+
+.btn {
+    text-decoration: none;
+    color: #cccccc; 
+    opacity: 0.6;
+    font-size: 40px;
+    z-index:11;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.btn--close {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    text-align:center;
+    line-height: 40px;
+    height: 50px;
+}
+
+.icon-cancel:before, .icon-left-open:before, .icon-right-open:before {
+    margin:0;
+    width:auto;
+}
+
+.btn--prev {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%);
+   
+}
+
+.btn--next {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active{
+    color: #989898;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.right-to-left {
+  animation-name: right-to-left;
+  animation-duration: .5s;
+}
+
+.left-to-right {
+  animation-name: left-to-right;
+  animation-duration: .5s;
+}
+
+@keyframes right-to-left {
+    from {left:0 } 
+    to { left:100%}
+}
+
+@keyframes left-to-right {
+    from {right:0 } 
+    to { right:100%}
+}
+
+@media only screen and (max-width:768px) { 
+    .btn {
+        font-size: 28px;
+        height:auto;
+    }
+}
